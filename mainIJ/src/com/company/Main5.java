@@ -1,21 +1,24 @@
 package com.company;
 
 import java.util.Arrays;
-import java.util.Scanner;
+
 
 public class Main5 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        int[] mas  = new int[a];
-        mas[0] = 0;
-        mas[1] = 1;
-        for (int b = 2; b < a; b++) {
-            mas[b] = mas[b - 1] + mas[b - 2];
+        int[][] arr = new int[9][9];
+        int i, j;
+        for (i = 0; i < 9; i++) {
+            for (j = 0; j < 9; j++) {
+                arr[i][j] = (i + 1) * (j + 1);
+                System.out.println(arr[i][j]);
+            }
+
         }
-        print(mas);
+        Arrays.stream(arr).map(Arrays::toString).forEach(System.out::println);
     }
-    public static void print(int[] v) {
-        System.out.println("Никита лох  " + Arrays.toString(v));
+
+
+    public static void print(int[][] v) {
+        System.out.print("Python is better " + Arrays.toString(v));
     }
 }
